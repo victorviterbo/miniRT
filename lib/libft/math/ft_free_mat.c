@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_invmat.c                                        :+:      :+:    :+:   */
+/*   ft_free_mat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/09 17:26:45 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/09 18:12:58 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/06/10 15:52:14 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/06/10 15:54:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_mat	*ft_invmat(t_mat *mat)
+void	ft_free_mat(t_mat *mat);
+
+void	ft_free_mat(t_mat *mat)
 {
-	t_mat	*inv;
 	size_t	i;
-	
+
 	i = 0;
-	while ()
+	while (i < mat->dim[0])
+	{
+		free(mat->val[i]);
+		i++;
+	}
+	free(mat);
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:34:23 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/09 17:47:51 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:55:53 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 t_mat	*ft_initmat(int m, int n)
 {
-	t_mat	mat;
+	t_mat	*mat;
 	size_t	i;
 
-	mat.val = ft_calloc(m, sizeof(double));
-	if (!mat.val)
+	mat = ft_calloc(1, sizeof(t_mat));
+	mat->val = ft_calloc(m, sizeof(double *));
+	if (!mat->val)
 		return (NULL);
 	i = 0;
 	while (i < n)
 	{
-		mat.val[i] = ft_calloc(m, sizeof(double));
-		if (!mat.val[i])
+		mat->val[i] = ft_calloc(m, sizeof(double));
+		if (!mat->val[i])
 		{
 			while (i)
 			{
-				free(mat.val[i - 1]);
+				free(mat->val[i - 1]);
 				i--;
 			}
-			return (free(mat.val), NULL);
+			return (free(mat->val), free(mat), NULL);
 		}
 		i++;
 	}
-	return (&mat);
+	return (mat);
 }

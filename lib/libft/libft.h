@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:33:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/09 17:22:36 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:54:08 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ typedef struct s_vec {
 }	t_vec;
 
 typedef struct s_mat {
-	int				dim[2];
-	int				**val;
+	size_t			dim[2];
+	double			**val;
 }	t_mat;
 
 typedef struct s_list
@@ -125,17 +125,20 @@ void		ft_lstpop(t_list **lst, t_list *node, void (*del)(void *));
 int			ft_lstsize(t_list *lst);
 // MATH
 double		ft_abs(double n);
+t_coor		ft_coorscale(t_coor base, t_coor tip, float scale);
+t_coor		ft_cooradd(t_coor v1, t_coor v2);
+t_coor		ft_coorsubstr(t_coor v1, t_coor v2);
+double		*ft_detmat(t_mat mat);
 double		ft_dotprod(t_coor v1, t_coor v2);
+void		ft_free_mat(t_mat *mat);
+t_mat		*ft_getsubmat(t_mat mat, int m, int n);
 t_coor		ft_initcoor(double x, double y, double z);
+t_mat		*ft_initmat(int m, int n);
 double		ft_max(double a, double b);
 double		ft_min(double a, double b);
 double		ft_norm(t_coor coor);
 double		ft_prev_power(double n, int base_size);
 int			*ft_range(int min, int max);
-t_coor		ft_cooradd(t_coor v1, t_coor v2);
-t_coor		ft_coorscale(t_coor base, t_coor tip, float scale);
-t_coor		coor_substr(t_coor v1, t_coor v2);
-t_coor		ft_coorsubstr(t_coor v1, t_coor v2);
 // MEMORY
 void		ft_bzero(void *s, unsigned int n);
 void		*ft_calloc(size_t count, size_t size);
