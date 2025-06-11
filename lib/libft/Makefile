@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/01 12:45:22 by vviterbo          #+#    #+#              #
-#    Updated: 2025/06/10 15:29:05 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/06/10 16:08:56 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ CONVERSIONS			=	ft_atof.c ft_atoi.c ft_ctoa.c ft_itoa.c ft_itoa_base.c \
 						ft_utoa_base.c ft_number_len.c
 SRCS_CONVERSIONS	=	$(addprefix conversions/, $(CONVERSIONS))
 OBJS_CONVERSIONS 	=	$(patsubst conversions/%.c, objs/%.o, $(SRCS_CONVERSIONS))
+
+GRAPHICS			=	
+SRCS_GRAPHICS		=	$(addprefix conversions/, $(GRAPHICS))
+OBJS_GRAPHICS 		=	$(patsubst conversions/%.c, objs/%.o, $(SRCS_GRAPHICS))
 
 LISTS				=	ft_lst_getn.c ft_lst_isin_int.c ft_lst_isin_void.c \
 						ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
