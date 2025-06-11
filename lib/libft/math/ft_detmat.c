@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 18:13:06 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/10 15:57:59 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/11 11:15:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ double	*ft_detmat(t_mat mat)
 {
 	double	det;
 	double	*subdet;
-	t_mat	*submat;
 	size_t	i;
 
 	if (mat.dim[0] != mat.dim[1])
@@ -29,14 +28,10 @@ double	*ft_detmat(t_mat mat)
 	i = 0;
 	while (i < mat.dim[0])
 	{
-		submat = ft_getsubmat(mat, 0, i);
-		if (!submat)
-			return (NULL);
-		subdet = ft_detmat(*submat);
-		ft_free_mat(submat);
+		subdet = ft_getcofac(mat, 0, i);
 		if (!subdet)
 			return (NULL);
-		det += (i % 2 == 0) * *subdet - (i % 2 != 0) * *subdet;
+		det += mat.val[0][i] * *subdet;
 		i++;
 	}
 	return (&det);
