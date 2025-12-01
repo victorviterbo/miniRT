@@ -7,7 +7,6 @@ A minimalistic raytracing engine written in C. It renders simple 3D scenes descr
 - Implements ambient, diffuse, and specular lighting
 - Phong reflection model for realistic materials
 - Camera movement and multiple viewpoints
-- Saves the rendered image to a BMP file
 - Handles shadows and basic reflections
 
 ## 🎨 Supported Elements
