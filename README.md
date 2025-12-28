@@ -3,10 +3,9 @@
 A minimalistic raytracing engine written in C. It renders simple 3D scenes described in a configuration file, applying lighting, shadows, and reflections to create realistic images.
 
 ## ✨ Features
-- Renders geometric primitives: spheres, cubes, planes, cylinders and cones
+- Renders a scene with basic 3D objects
 - Implements ambient, diffuse, and specular lighting
 - Full-Phong reflection model for realistic materials
-- Camera movement and multiple viewpoints
 - Handles shadows and basic reflections
 - Handles surface roughness
 - Comes with included patterns (checkerboard, sand, bricks, etc.). Full list below
@@ -14,8 +13,8 @@ A minimalistic raytracing engine written in C. It renders simple 3D scenes descr
 ## 🎨 Supported Elements
 - **Camera**: Position, orientation, field of view
 - **Lights**: Ambient, point lights
-- **Objects**: Spheres, planes, cylinders, etc.
-- **Materials**: Colors, reflectivity, specular components
+- **Objects**: Spheres, planes, cylinders, cones, cubes
+- **Rendering**: Colors or patterns, roughness, shininess
 
 ## 🚀 Usage
 ### Generate image
