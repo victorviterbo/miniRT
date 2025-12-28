@@ -21,8 +21,8 @@ A minimalistic raytracing engine written in C. It renders simple 3D scenes descr
 ### Scene syntax
 `###_vec` values have to be passed as a,b,c 
 `color_vec` values have to be bassed as R,G,B or for objects, as a texture (checkerboard, sand etc.)
-`<surface_shininess>` for objects only: have to be passed as a number between 1 (matte) and 150 (shiny)
-`<surface_roughness>` for objects only: have to be passed as a number between 0 (smooth) and 1 (rough)
+`<surface_shininess>` for objects only [optional]: have to be passed as a number between 1 (matte) and 150 (shiny)
+`<surface_roughness>` for objects only [optional]: have to be passed as a number between 0 (smooth) and 1 (rough)
 
 `A <intensity> <color_vec>`  &rarr; Ambiant Light
 
