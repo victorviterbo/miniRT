@@ -3,11 +3,13 @@
 A minimalistic raytracing engine written in C. It renders simple 3D scenes described in a configuration file, applying lighting, shadows, and reflections to create realistic images.
 
 ## ✨ Features
-- Renders geometric primitives: spheres, planes, cylinders, squares, triangles
+- Renders geometric primitives: spheres, cubes, planes, cylinders and cones
 - Implements ambient, diffuse, and specular lighting
-- Phong reflection model for realistic materials
+- Full-Phong reflection model for realistic materials
 - Camera movement and multiple viewpoints
 - Handles shadows and basic reflections
+- Handles surface roughness
+- Comes with included patterns (checkerboard, sand, bricks, etc.). Full list below
 
 ## 🎨 Supported Elements
 - **Camera**: Position, orientation, field of view
@@ -21,6 +23,7 @@ A minimalistic raytracing engine written in C. It renders simple 3D scenes descr
 ### Scene syntax
 - `###_vec` values have to be passed as a,b,c 
 - `color_vec` values have to be bassed as R,G,B or for objects, as a texture (checkerboard, sand etc.)
+- `field of view`has to be passed as a number in the ]0;180[ range
 - `<surface_shininess>` for objects only [optional]: have to be passed as a number between 1 (matte) and 150 (shiny)
 - `<surface_roughness>` for objects only [optional]: have to be passed as a number between 0 (smooth) and 1 (rough)
 
@@ -57,3 +60,18 @@ A minimalistic raytracing engine written in C. It renders simple 3D scenes descr
 `co  <position_vec_tip> <direction_vec> <base_diameter> <height> <color_vec> [s <surface_shininess>] [b <surface_roughness>]` &rarr; cone 
 
 &rarr; ex: `co 0,-2,0 0,1,0 2 4 160,0,160 s 150`
+
+### Available Textures
+- checkerboard (computed)
+- snow
+- onyx
+- wood
+- rocks
+- bricks
+- tiles
+- darkstone
+- marble
+- plastic
+- rock
+- gold
+- sand
